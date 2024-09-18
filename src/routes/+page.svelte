@@ -15,7 +15,7 @@
 	<title>Apollo 15</title>
 </svelte:head>
 
-<div class="flex min-h-screen flex-col font-lato text-white">
+<div class="flex min-h-screen flex-col font-lato text-yelow">
 	<video id="d" class="d" autoplay loop muted playsinline>
 		<source src="/paralax_two.mp4" type="video/mp4" />
 		Ваш браузер не підтримує відтворення відео.

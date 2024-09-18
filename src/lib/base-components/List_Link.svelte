@@ -8,7 +8,7 @@
 <ul class={cn('', classes)}>
 	{#each items as item}
 		<li>
-			<a href={item.href}>{item.item}</a>
+			<a class="hover:underline" href={item.href}>{item.item}</a>
 		</li>
 	{/each}
 </ul>

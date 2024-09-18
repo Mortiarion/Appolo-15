@@ -26,7 +26,8 @@ export default {
 			white: '#FFFFFF',
 			lite_grey: '#9E9E9E',
 			medium_grey: '#747474',
-			black: '#000000'
+			black: '#000000',
+			yelow: "#fdd346"
 		},
 		fontFamily: {
 			lato: ['Lato', 'sans-serif'],

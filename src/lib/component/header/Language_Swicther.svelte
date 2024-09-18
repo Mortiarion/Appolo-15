@@ -31,11 +31,9 @@
 </script>
 
 <div class="language-menu relative font-audiowide" bind:this={languageMenu}>
-	<button
-		on:click={togglelanguageMenu}
-		class="language-menu-button px-4 py-1.5 text-2xl underline"
-		>{currentLocale}</button
-	>
+	<button on:click={togglelanguageMenu} class="language-menu-button px-4 py-1.5 text-2xl underline">
+		{currentLocale}
+	</button>
 
 	<ul
 		class:active={$isOpenlanguageMenu}
@@ -66,7 +64,7 @@
 				flex-direction: column;
 				gap: 10px;
 				border-radius: 16px;
-				background-color: red;
+				background-color: transparent;
 				z-index: 22;
 			}
 		}

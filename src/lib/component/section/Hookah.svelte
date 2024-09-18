@@ -38,7 +38,7 @@
 					<div class="flex flex-col items-center gap-2.5 font-audiowide">
 						<Heading classes="text-4xl" level="h4">{block.heading}</Heading>
 						<div class="separator"></div>
-						<Text classes="text-lite_grey text-xl">{block.text}</Text>
+						<Text classes="text-white text-xl">{block.text}</Text>
 						<Paragraph classes="text-4xl">{block.paragraph}</Paragraph>
 					</div>
 				{/each}
@@ -46,7 +46,7 @@
 			<div class="flex flex-col items-center gap-2.5 font-audiowide">
 				<Heading classes="text-4xl" level="h4">АПОЛЛОН 15</Heading>
 				<div class="separator"></div>
-				<Text classes="text-lite_grey text-xl">Авторський мікс для справжніх мандривників</Text>
+				<Text classes="text-white text-xl">Авторський мікс для справжніх мандривників</Text>
 				<Paragraph classes="text-4xl">390₴</Paragraph>
 			</div>
 		</div>
