@@ -15,8 +15,8 @@
 	<title>Apollo 15</title>
 </svelte:head>
 
-<div class="flex min-h-screen flex-col font-lato text-yelow">
-	<video id="d" class="d" autoplay loop muted playsinline>
+<div class=" bg-app flex min-h-screen flex-col font-lato text-white">
+	<video class="video" autoplay loop muted playsinline>
 		<source src="/paralax_two.mp4" type="video/mp4" />
 		Ваш браузер не підтримує відтворення відео.
 	</video>
@@ -43,16 +43,11 @@
 </div>
 
 <style lang="postcss">
-	.p {
-		position: absolute;
-		width: 100%;
-		top: 0;
-		/* height: 970px; */
-	}
+	
 
-	.d {
+	.video {
 		position: fixed;
 		width: 100%;
-		
+		z-index: -1;
 	}
 </style>
