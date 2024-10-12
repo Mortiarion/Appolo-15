@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Section from '$lib/base-components/Container.svelte';
 	import Container from '$lib/base-components/Container.svelte';
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -37,37 +36,41 @@
 	});
 
 	function movePrev() {
-		slides.forEach((slide) => {
-			const x = Number(slide.getAttribute('data-x'));
+		throttleNavigation(() => {
+			slides.forEach((slide) => {
+				const x = Number(slide.getAttribute('data-x'));
 
-			let newX = x - width;
+				let newX = x - width;
 
-			if (newX < -(width * (slides.length - 2))) {
-				newX = width;
-				slide.style.zIndex = '-1';
-			} else {
-				slide.style.zIndex = '1';
-			}
+				if (newX < -(width * (slides.length - 2))) {
+					newX = width;
+					slide.style.zIndex = '-1';
+				} else {
+					slide.style.zIndex = '1';
+				}
 
-			slide.setAttribute('data-x', newX.toString());
-			slide.style.transform = `translateX(${newX}px)`;
+				slide.setAttribute('data-x', newX.toString());
+				slide.style.transform = `translateX(${newX}px)`;
+			});
 		});
 	}
 
 	function moveNext() {
-		slides.forEach((slide) => {
-			const x = Number(slide.getAttribute('data-x'));
-			let newX = x + width;
+		throttleNavigation(() => {
+			slides.forEach((slide) => {
+				const x = Number(slide.getAttribute('data-x'));
+				let newX = x + width;
 
-			if (newX > width * (slides.length - 2)) {
-				newX = -width;
-				slide.style.zIndex = '-1';
-			} else {
-				slide.style.zIndex = '1';
-			}
+				if (newX > width * (slides.length - 2)) {
+					newX = -width;
+					slide.style.zIndex = '-1';
+				} else {
+					slide.style.zIndex = '1';
+				}
 
-			slide.style.transform = `translateX(${newX}px)`;
-			slide.setAttribute('data-x', newX.toString());
+				slide.style.transform = `translateX(${newX}px)`;
+				slide.setAttribute('data-x', newX.toString());
+			});
 		});
 	}
 
@@ -78,35 +81,37 @@
 		activeIndex.set(slideIndex);
 		activeImageIndex.set(imageIndex);
 		document.body.style.overflow = 'hidden';
-		// document.body.classList.add('no-scroll');
 	}
 
 	function closeModal() {
 		activeIndex.set(-1);
 		activeImageIndex.set(-1);
-		// document.body.classList.remove('no-scroll');
 		document.body.style.overflow = 'visible';
 	}
 
 	function modalPrev() {
-		activeImageIndex.update((imgIndex) => {
-			if ($activeIndex !== -1 && imgIndex !== -1) {
-				const slideImages = slide[$activeIndex];
-				return imgIndex > 0 ? imgIndex - 1 : slideImages.length - 1;
-			}
+		throttleNavigation(() => {
+			activeImageIndex.update((imgIndex) => {
+				if ($activeIndex !== -1 && imgIndex !== -1) {
+					const slideImages = slide[$activeIndex];
+					return imgIndex > 0 ? imgIndex - 1 : slideImages.length - 1;
+				}
 
-			return imgIndex;
+				return imgIndex;
+			});
 		});
 	}
 
 	function modalNext() {
-		activeImageIndex.update((imgIndex) => {
-			if ($activeIndex !== -1 && imgIndex !== -1) {
-				const slideImages = slide[$activeIndex];
-				return imgIndex < slideImages.length - 1 ? imgIndex + 1 : 0;
-			}
+		throttleNavigation(() => {
+			activeImageIndex.update((imgIndex) => {
+				if ($activeIndex !== -1 && imgIndex !== -1) {
+					const slideImages = slide[$activeIndex];
+					return imgIndex < slideImages.length - 1 ? imgIndex + 1 : 0;
+				}
 
-			return imgIndex;
+				return imgIndex;
+			});
 		});
 	}
 
@@ -124,15 +129,29 @@
 	function handleTouchEnd() {
 		if (touchEndX < touchStartX - 50) {
 			modalNext();
+			moveNext();
 		} else if (touchEndX > touchStartX + 50) {
 			modalPrev();
+			movePrev();
+		}
+	}
+
+	let isThrottled = false;
+
+	function throttleNavigation(callback: () => void) {
+		if (!isThrottled) {
+			isThrottled = true;
+			callback();
+			setTimeout(() => {
+				isThrottled = false;
+			}, 1000);
 		}
 	}
 </script>
 
-<Section>
+<section>
 	<Container>
-		<div class="slider-container">
+		<div class="slider-container width-[500px]">
 			<button class="prev" type="button" on:click={movePrev}>&#10094</button>
 			<div
 				class="slider-track"
@@ -144,7 +163,7 @@
 				{#each slide as img, slideIndex}
 					<!-- svelte-ignore a11y-click-events-have-key-events
 					a11y-no-noninteractive-element-interactions -->
-					<div class="slide">
+					<div class="slide xl:height-[495px]">
 						{#each img as imgSrc, imgIndex}
 							<img
 								on:click={() => openModal(slideIndex, imgIndex)}
@@ -177,7 +196,7 @@
 			</div>
 		{/if}
 	</Container>
-</Section>
+</section>
 
 <style lang="postcss">
 	.slider-container {
@@ -319,8 +338,9 @@
 		}
 	}
 
-	.no-scroll {
-		overflow: hidden !important;
-		height: 100vh;
-	}
+	/* @media (width: 1024px) {
+		.slide {
+			height: 495px;
+		}
+	} */
 </style>

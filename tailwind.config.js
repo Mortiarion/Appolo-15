@@ -17,17 +17,18 @@ export default {
 		},
 		backgroundImage: {
 			header: "url('/header.png')",
-			parallax: "url('/paralax.jpg')",
+			// parallax: "url('/paralax.jpg')",
 			apollo: "url('/apollo.jpg')",
 			union: "url('/union.svg')",
 			section: "url('/bg_two_section.gif')",
+			'parallax-2560-1080': "url('/paralax_two-2560-1080.gif')"
 		},
 		colors: {
 			white: '#FFFFFF',
 			lite_grey: '#9E9E9E',
 			medium_grey: '#747474',
 			black: '#000000',
-			yelow: "#fdd346",
+			yelow: '#fdd346',
 			app: '#06014066'
 		},
 		fontFamily: {

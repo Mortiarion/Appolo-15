@@ -1,9 +1,8 @@
 <script lang="ts">
 	import Container from '$lib/base-components/Container.svelte';
-	import Section from '$lib/base-components/Section.svelte';
 </script>
 
-<Section>
+<section>
 	<Container>
 		<div class="mb-10 flex justify-center">
 			<iframe
@@ -17,4 +16,4 @@
 			></iframe>
 		</div>
 	</Container>
-</Section>
+</section>

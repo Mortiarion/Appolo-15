@@ -1,9 +1,6 @@
 <script lang="ts">
 	import Container from '$lib/base-components/Container.svelte';
-	import Heading from '$lib/base-components/Heading.svelte';
-	import Paragraph from '$lib/base-components/Paragraph.svelte';
 	import Section from '$lib/base-components/Section.svelte';
-	import Text from '$lib/base-components/Text.svelte';
 
 	let list_one = [
 		{ text_one: 'Heineken', text_two: '80₴' },
@@ -102,14 +99,14 @@
 
 <Section>
 	<Container>
-		<div class="font-audiowide px-20 mb-28">
-			<Heading level="h2" classes="text-center text-5xl mb-16">Меню</Heading>
+		<div class="mb-28 px-20 font-audiowide">
+			<h2 class="mb-16 text-center text-5xl">Меню</h2>
 			<div class="grid grid-cols-2 gap-10">
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Пиво</Paragraph>
+						<p class="whitespace-nowrap text-4xl">Пиво</p>
 						<div class="separator"></div>
-						<Text classes="text-2xl">330мл/500мл</Text>
+						<span class="text-2xl">330мл/500мл</span>
 					</div>
 					<ul>
 						{#each list_one as list}
@@ -121,7 +118,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Закуски</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Закуски</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -134,7 +131,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Коктейлі з водкою</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Коктейлі з водкою</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -147,7 +144,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Коктейлі з ромом</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Коктейлі з ромом</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -160,7 +157,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Коктейлі з віскі</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Коктейлі з віскі</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -173,7 +170,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Коктейлі з джином</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Коктейлі з джином</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -186,7 +183,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Коктейлі з текілою</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Коктейлі з текілою</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -199,7 +196,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Коктейлі з просекко</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Коктейлі з просекко</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -212,7 +209,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Чай/кава</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Чай/кава</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -225,7 +222,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Крафтові</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Крафтові</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -238,7 +235,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Безалкогольні</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Безалкогольні</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -251,7 +248,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Саури</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Саури</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -264,7 +261,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">Наливки</Paragraph>
+						<p class="text-4xl whitespace-nowrap">Наливки</p>
 						<div class="separator"></div>
 					</div>
 					<ul>
@@ -277,7 +274,7 @@
 				</div>
 				<div>
 					<div class="mb-10 flex items-center">
-						<Paragraph classes="text-4xl whitespace-nowrap">C</Paragraph>
+						<p class="text-4xl whitespace-nowrap">C</p>
 						<div class="separator"></div>
 					</div>
 					<ul>

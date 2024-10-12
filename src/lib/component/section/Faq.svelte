@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Container from '$lib/base-components/Container.svelte';
-	import Section from '$lib/base-components/Section.svelte';
 
 	const questions = [
 		{ question: 'Чи можна у Вас замовити кальян та яка вартість?' },
@@ -39,10 +38,10 @@
 	}
 </script>
 
-<Section>
+<section>
 	<Container>
 		<div class="faq-container">
-			<h2 class=" font-audiowide text-5xl text-center leading-[82px] font-bold">Часті питання:</h2>
+			<h2 class=" text-center font-audiowide text-5xl font-bold leading-[82px]">Часті питання:</h2>
 			<ul class="question-list">
 				{#each questions as { question }, index}
 					<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
@@ -63,7 +62,7 @@
 			</ul>
 		</div>
 	</Container>
-</Section>
+</section>
 
 <style>
 	.faq-container {
@@ -72,7 +71,6 @@
 		flex-direction: column;
 		gap: 50px;
 		margin-bottom: 120px;
-		/* color: #fdd346 */
 	}
 
 	.question-item {

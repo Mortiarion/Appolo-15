@@ -1,9 +1,5 @@
 <script lang="ts">
 	import Container from '$lib/base-components/Container.svelte';
-	import Heading from '$lib/base-components/Heading.svelte';
-	import Paragraph from '$lib/base-components/Paragraph.svelte';
-	import Section from '$lib/base-components/Section.svelte';
-	import Text from '$lib/base-components/Text.svelte';
 
 	let block_one = [
 		{
@@ -29,29 +25,33 @@
 	];
 </script>
 
-<Section>
+<section>
 	<Container>
-		<div class="mb-24 flex flex-col items-center bg-union bg-[top_100px_center] bg-no-repeat bg-[length:162px_422px]">
-			<Heading classes="text-5xl font-audiowide mb-[90px]" level="h2">Кальян</Heading>
+		<div
+			class="mb-24 flex flex-col items-center bg-union bg-[length:162px_422px] bg-[top_100px_center] bg-no-repeat"
+		>
+			<h2 class="mb-[90px] font-audiowide text-5xl">Кальян</h2>
 			<div class="mb-10 grid grid-cols-2 gap-x-60 gap-y-20">
 				{#each block_one as block}
 					<div class="flex flex-col items-center gap-2.5 font-audiowide">
-						<Heading classes="text-4xl" level="h4">{block.heading}</Heading>
+						<h4 class="text-center text-4xl">{block.heading}</h4>
 						<div class="separator"></div>
-						<Text classes="text-white text-xl">{block.text}</Text>
-						<Paragraph classes="text-4xl">{block.paragraph}</Paragraph>
+						<span class="text-center text-xl text-white">{block.text}</span>
+						<p class="text-4xl">{block.paragraph}</p>
 					</div>
 				{/each}
 			</div>
 			<div class="flex flex-col items-center gap-2.5 font-audiowide">
-				<Heading classes="text-4xl" level="h4">АПОЛЛОН 15</Heading>
+				<h4 class="text-center text-4xl">АПОЛЛОН 15</h4>
 				<div class="separator"></div>
-				<Text classes="text-white text-xl">Авторський мікс для справжніх мандривників</Text>
-				<Paragraph classes="text-4xl">390₴</Paragraph>
+				<span class="text-center text-xl text-white"
+					>Авторський мікс для справжніх мандривників</span
+				>
+				<p class="text-4xl">390₴</p>
 			</div>
 		</div>
 	</Container>
-</Section>
+</section>
 
 <style lang="postcss">
 	.separator {

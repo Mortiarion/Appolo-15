@@ -1,9 +1,5 @@
 <script lang="ts">
-	import Section from '$lib/base-components/Section.svelte';
 	import Container from '$lib/base-components/Container.svelte';
-	import Heading from '$lib/base-components/Heading.svelte';
-	import Text from '$lib/base-components/Text.svelte';
-	import Paragraph from '$lib/base-components/Paragraph.svelte';
 
 	let list = [
 		{
@@ -44,23 +40,23 @@
 	];
 </script>
 
-<Section>
+<section>
 	<Container>
-		<div class="py-16 font-lato px-20">
-			<Heading classes="text-5xl text-center mb-10" level="h1">Політика конфіденційності</Heading>
-			<Paragraph classes="text-2xl mb-16"
-				>Ця політика конфіденційності визначає, як наш сайт – «Apollo 15» обробляє особисту
+		<div class="px-20 py-16 font-lato">
+			<h1 class="mb-10 text-center text-5xl">Політика конфіденційності</h1>
+			<p class="mb-16 text-2xl">
+				Ця політика конфіденційності визначає, як наш сайт – «Apollo 15» обробляє особисту
 				інформацію відвідувачів. Ми поважаємо вашу приватність та зобов'язуємося забезпечувати
 				захист вашої інформації.
-			</Paragraph>
-			<div class='flex flex-col gap-10'>
+			</p>
+			<div class="flex flex-col gap-10">
 				{#each list as l}
 					<div class="flex flex-col gap-2.5 text-2xl">
-						<Paragraph classes='font-bold'>{l.text_one}</Paragraph>
-						<Text>{l.text_two}</Text>
+						<p class="font-bold">{l.text_one}</p>
+						<span>{l.text_two}</span>
 					</div>
 				{/each}
 			</div>
 		</div>
 	</Container>
-</Section>
+</section>

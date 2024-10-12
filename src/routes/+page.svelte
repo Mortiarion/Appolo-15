@@ -14,12 +14,14 @@
 <svelte:head>
 	<title>Apollo 15</title>
 </svelte:head>
-
-<div class=" bg-app flex min-h-screen flex-col font-lato text-white">
-	<video class="video" autoplay loop muted playsinline>
+<!-- bg-app -->
+<div class="  flex min-h-screen flex-col font-lato text-white">
+	<!-- <video class="video" autoplay loop muted playsinline>
 		<source src="/paralax_two.mp4" type="video/mp4" />
 		Ваш браузер не підтримує відтворення відео.
-	</video>
+	</video> -->
+
+		<img class="parallax" src="/paralax_two-2560-1080.gif" alt="">
 	<div class="relative">
 		<Header />
 
@@ -43,11 +45,14 @@
 </div>
 
 <style lang="postcss">
-	
-
-	.video {
+	.parallax {
 		position: fixed;
 		width: 100%;
+		height: 100vh;
 		z-index: -1;
+	}
+
+	@media (hover: hover) {
+
 	}
 </style>
