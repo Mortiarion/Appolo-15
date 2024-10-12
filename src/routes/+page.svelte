@@ -4,7 +4,7 @@
 	import Wellcome from '$lib/component/section/Wellcome.svelte';
 	import Hookah from '$lib/component/section/Hookah.svelte';
 	import Main_Menu from '$lib/component/section/Main_Menu.svelte';
-	import Photo_Galery from '$lib/component/section/Photo_Galery.svelte';
+	import Photo_Galery from '$lib/component/section/Gallery.svelte';
 	import Faq from '$lib/component/section/Faq.svelte';
 	import Location_Map from '$lib/component/section/Location_Map.svelte';
 	import Work from '$lib/component/section/Work.svelte';
